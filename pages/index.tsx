@@ -40,8 +40,8 @@ const Home = () => {
 
     const worker = workerRef.current!;
     await worker.load();
-    await worker.loadLanguage('rus');
-    await worker.initialize('rus');
+    await worker.loadLanguage(['eng', 'rus'], );
+    await worker.initialize(['eng', 'rus']);
 
     const response = await worker.recognize(imageData!);
     setOcrResult(response.data.text);
